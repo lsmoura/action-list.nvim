@@ -15,20 +15,22 @@ return {
       opts = actions,
       sort = true,
     })
-
-    vim.keymap.set(
-      { "n", "i", "v" },
-      "<C-S-A>",
-      require('action-list').open,
-      { desc = "Action Picker (fzf)", silent = true }
-    )
   end,
+  keys = {
+    {
+      "<C-S-A>",
+      function()
+        require('action-list').open()
+      end,
+      desc = "Action Picker",
+    },
+  },
 }
 ```
 
 ## showcase
 
-![][doc/action-list.png]
+![](doc/action-list.png)
 
 # Author
 
